@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    "use strict";
+    
+    class Hero{
+        constructor(fn, ln){
+            this.fname = fn;
+            this.lname = ln;
+            this._secret = "Mission Top Secret";
+        }
+        fullname(){
+            return this.fname+" "+this.lname;
+        }
+    };
+
+    var hero1 = new Hero("Bruce","Wayne");
+    var hero2 = new Hero("Clark","Kent");
+    console.log(hero1.fullname());
+    console.log(hero2.fullname());
+    console.log(hero1.fullname === hero2.fullname);// true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

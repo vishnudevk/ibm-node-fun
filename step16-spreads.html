@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spreads</title>
+    <script>
+        // REST
+        function sayMessage(...hero){
+            for(var i = 0; i < hero.length; i++){
+                console.log(hero[i]+" says Hi")
+            }
+        };
+        var heroes = ["Ironman","Hulk","Antman"];
+        // SPREAD
+        var avengers1 = ["Spiderman","Dr Strange",heroes,"Black Widow"];
+        var avengers2 = ["Spiderman","Dr Strange",...heroes,"Black Widow"];
+        sayMessage(...heroes);
+        console.log(avengers1);
+        console.log(avengers2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    var Hero = function(fn, ln){
+        this.fname = fn;
+        this.lname = ln;
+        var secretmission = "My Secret Mission";
+        /*
+        this.fullname = function(){
+            return this.fname+" "+this.lname;
+        }
+        */
+    };
+    Hero.prototype.fullname = function(){
+            return this.fname+" "+this.lname;
+    };
+
+    var hero1 = new Hero("Peter", "Parker");
+    var hero2 = new Hero("Tony", "Stark");
+
+    console.log(hero1.fname)// Bruce
+    console.log(hero1.fullname())// Bruce
+
+    // console.log( 5 == "5" ); //true
+    console.log(hero1.fullname === hero2.fullname)
+    // console.log(hero.secretmission)// no access
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

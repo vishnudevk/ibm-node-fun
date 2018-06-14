@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function fun</title>
+    <script>
+        "use strict"
+        /*
+        function addit(num1, num2, num3){
+            return num1+num2+num3;
+        }
+        */
+        function addit(...args){
+            let tot = 0;
+            for(let i = 0; i < args.length; i++){
+                tot+=args[i]
+            };
+            // console.log(addit.caller.name)
+            return tot;
+        }
+        /*
+        function fun1(){
+            addit(1)
+        }
+        function fun2(){
+            addit(1)
+        }
+        fun1();
+        */
+        console.log(addit(1));// NaN
+        console.log(addit(1,2));// NaN
+        console.log(addit(1,2,3));// 6
+        console.log(addit(1,2,3,4));// 6
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

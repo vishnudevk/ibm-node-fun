@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Call Apply Bind</title>
+    <script>
+        /*
+        */
+        var cart = {
+            getProductPrice : () => 100,
+            getSellingPrice : function(){
+                var calculateTax = () => this.getProductPrice()*0.2;
+                return calculateTax()+this.getProductPrice();
+            }
+        };
+        /*
+        var fun = () =>  "hello there again" ;
+
+        console.log( fun() );
+        */
+
+        console.log(cart.getSellingPrice());// 120
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

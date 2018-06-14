@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Step1</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByTagName("button")[0].addEventListener("click", init );
+            document.getElementsByTagName("button")[1].addEventListener("click", init );
+            document.getElementsByTagName("button")[2].addEventListener("click", init );
+            document.getElementsByTagName("button")[3].addEventListener("click", init );
+        });
+        function init(event){
+            // document.getElementsByTagName("h1")[0].innerHTML = "Hello World";
+            // document.querySelectorAll("h1")[1].innerHTML = "Hello World";
+            console.log("you clicked a button", event.target.innerHTML);
+            document.getElementsByTagName("h1")[0].innerHTML = event.target.innerHTML;
+        }
+    </script>
+</head>
+<body>
+    <button>First Button</button>
+    <button>Second Button</button>
+    <button>Third Button</button>
+    <button>Fourth Button</button>
+    <h1>First</h1>
+    <h1>Second</h1>
+</body>
+</html>

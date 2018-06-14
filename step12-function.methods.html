@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+        var cart = {
+            getProductPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var self = this;
+                var calculateTax = function(){
+                    return self.getProductPrice()*0.2;
+                };
+                return calculateTax()+this.getProductPrice();
+            }
+        };
+
+        */
+        var cart = {
+            getProductPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var calculateTax = function(){
+                    return this.getProductPrice()*0.2;
+                };
+               // return calculateTax.call(this)+this.getProductPrice();
+               // return calculateTax.apply(this)+this.getProductPrice();
+                  return calculateTax.bind(this)()+this.getProductPrice();
+            }
+        };
+        console.log( cart.getSellingPrice() )// 120
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

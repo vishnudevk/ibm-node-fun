@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events</title>
+    <script>
+    function eventHandler(evt){
+        // evt.target
+        // evt.type
+        // evt.currentTarget
+
+        // preventDefault
+        // stopPropogation
+        console.log("Type of event : "+evt.type)
+    }
+    document.addEventListener("DOMContentLoaded", function(){
+        document.querySelector("button").addEventListener("click", eventHandler);
+        document.querySelector("button").addEventListener("mouseover", eventHandler);
+        document.querySelector("button").addEventListener("mousedown", eventHandler);
+        document.querySelector("button").addEventListener("mouseup", eventHandler);
+        document.querySelector("button").addEventListener("mouseout", eventHandler);
+    })
+    </script>
+</head>
+<body>
+    <button>Click Me</button>
+</body>
+</html>

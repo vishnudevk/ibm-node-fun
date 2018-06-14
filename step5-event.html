@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var count = 1;
+        document.addEventListener("DOMContentLoaded", function(){
+            //------------------------------------------------------
+            document.querySelector(".box").addEventListener("click", removechildfun);
+            //------------------------------------------------------
+            document.querySelectorAll("button")[0].addEventListener("click", addfun);
+            //------------------------------------------------------
+            document.querySelectorAll("button")[1].addEventListener("click", removefirst);
+            //------------------------------------------------------
+            document.querySelectorAll("button")[2].addEventListener("click", removelast);
+        });
+
+        function addfun(){
+            /*
+                var elm = document.createElement("div");
+                    elm.setAttribute("class",'ibm')
+                    elm.textContent = count;
+                document.querySelector(".box").appendChild(elm);
+            */
+            document.querySelector(".box").innerHTML += "<div class='ibm'>"+count+"</div>"
+                count++;
+        };
+        function removefirst(){
+                var elm = document.querySelector(".box").firstChild;
+                document.querySelector(".box").removeChild(elm);
+                count--;
+        };
+        function removelast(){
+                var elm = document.querySelector(".box").lastChild;
+                document.querySelector(".box").removeChild(elm);
+                count--;
+        };
+
+        function removechildfun(evt){
+            // console.log(evt.target);
+            // console.log(evt.target.innerHTML);
+            if(evt.target.getAttribute("class")==='ibm'){
+                console.log("we found a ibm box");
+                document.querySelector(".box").removeChild(evt.target);
+            }
+        };
+    </script>
+    <style>
+        .box{
+            border: 2px solid orangered;
+            padding: 5px;
+            height: 300px;
+            overflow: auto;
+            text-align: center;
+            line-height: 100px;
+            color: gainsboro;
+            font-size: 24px;
+        }
+        .ibm{
+            width: 100px;
+            height: 100px;
+            background-color: dimgray;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <button>Add</button>
+    <button>Remove First</button>
+    <button>Remove Last</button>
+    <hr>
+    <div class="box"></div>
+</body>
+</html>

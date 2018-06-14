@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Call Apply Bind</title>
+    <script>
+        var batman = {
+            title : "Batman",
+            fname : "Bruce",
+            lname : "Wayne",
+            fullname : function(message, city){
+                return this.fname+" "+this.lname+" says "+message+" from "+city;
+            }
+        };
+        var superman = {
+            title : "Superman",
+            fname : "Clark",
+            lname : "Kent"
+        };
+        var spiderman = {
+            title : "Spiderman",
+            fname : "Peter",
+            lname : "Parker"
+        };
+        /*
+        console.log(batman.fullname());// Bruce Wayne
+        console.log(batman.fullname.call(superman));// Clark Kent
+        console.log(batman.fullname.call(spiderman));// Peter Parker
+        */
+       // console.log(batman.fullname("Hello"));// Bruce Wayne says Hello
+       // console.log(batman.fullname.call(superman,"Hello","Metropolis"));// Bruce Wayne says Hello
+       // console.log(batman.fullname.apply(superman,["Hello","Metropolis"]));// Bruce Wayne says Hello
+       console.log(batman.fullname.bind(spiderman)())
+       var greeting = batman.fullname.bind(spiderman);
+
+            console.log( greeting("Hey","New York") );
+            console.log( greeting("Hello","New York") );
+            console.log( greeting("Ola","New York") );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

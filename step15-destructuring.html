@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructuring</title>
+    <script>
+        // variables are passed as values and objects are passed as references
+        var hero = {
+            title : "Batman",
+            fname : "Bruce",
+            city : "Gotham"
+        };
+        /*
+        var comichero = hero.title;
+        console.log(comichero);// Batman
+        comichero = "Joker";
+        console.log(comichero);// Joker
+        console.log(hero.title);// Joker
+        */
+        /*
+        var herotitle = hero.title,
+            herofname = hero.fname,
+            herocity = hero.city;
+        */
+       //  let { title:herotitle, fname:herofname, city:herocity } = hero;
+        let { title , fname , city } = hero;
+        console.log(title);// Batman
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

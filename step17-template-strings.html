@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template Strings</title>
+    <script>
+        let hero = {
+            title : "Rajani",
+            city : "Chennai",
+            power : 9,
+            poster : "images/rajani.jpg"
+        };
+
+        document.addEventListener("DOMContentLoaded", function(){
+            document.querySelector("button").addEventListener("click", clickHandler)
+        });
+
+        function clickHandler(){
+           // document.body.innerHTML += '<div class="box"><h1>'+hero.title+'</h1><h2>'+hero.city+'</h2><input type="range" min="0" max="10" value="'+hero.power+'"><img src="'+hero.poster+'" alt="'+hero.title+'"> </div>';
+           document.body.innerHTML += `
+           <div class="box">
+            <h1>${hero.title}</h1>
+            <h2>${hero.city}</h2>
+            <input type="range" min="0" max="10" value="${hero.power}">
+            <img src="${hero.poster}" alt="${hero.title}"> 
+           </div>
+           `;
+        }
+    </script>
+</head>
+<body>
+    <button>Click Me</button>
+    <hr>
+
+</body>
+</html>
